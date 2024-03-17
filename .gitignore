@@ -1,0 +1,7 @@
+/.env.override
+/.idea/
+/.phpunit.cache/
+/.phpunit.result.cache
+/composer.lock
+/phpunit.xml.bak
+/vendor/
