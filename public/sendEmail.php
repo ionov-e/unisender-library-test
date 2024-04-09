@@ -6,11 +6,13 @@ define('UNISENDER_API_KEY', $_SERVER['UNISENDER_API_KEY']);
 define('UNISENDER_SENDER_EMAIL', $_SERVER['UNISENDER_SENDER_EMAIL']);
 define('UNISENDER_SENDER_EMAIL_NAME', $_SERVER['UNISENDER_SENDER_EMAIL_NAME']);
 define('UNISENDER_RECEIVER_EMAIL', $_SERVER['UNISENDER_RECEIVER_EMAIL']);
+define('UNISENDER_LIST_ID', $_SERVER['UNISENDER_LIST_ID']);
 
 echo 'UNISENDER_API_KEY: ' . UNISENDER_API_KEY . "<br>";
 echo 'UNISENDER_SENDER_EMAIL: ' . UNISENDER_SENDER_EMAIL . "<br>";
 echo 'UNISENDER_SENDER_EMAIL_NAME: ' . UNISENDER_SENDER_EMAIL_NAME . "<br>";
 echo 'UNISENDER_RECEIVER_EMAIL: ' . UNISENDER_RECEIVER_EMAIL . "<br>";
+echo 'UNISENDER_LIST_ID: ' . UNISENDER_LIST_ID . "<br>";
 
 $unisender = new \Unisender\ApiWrapper\UnisenderApi(
     UNISENDER_API_KEY,
@@ -24,7 +26,7 @@ $unisender = new \Unisender\ApiWrapper\UnisenderApi(
 $resultAsJson = $unisender->sendEmail(
     [
         'sender_email' => UNISENDER_SENDER_EMAIL,
-        'list_id' => 1,
+        'list_id' => UNISENDER_LIST_ID,
         'email' => UNISENDER_RECEIVER_EMAIL,
         'sender_name' => 'Супер тест Имя 0.1',
         'subject' => 'Супер тест Тема 0.1',
